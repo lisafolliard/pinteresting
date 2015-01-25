@@ -7,19 +7,15 @@ class PinsController < ApplicationController
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
   end
 
-
   def show
   end
-
 
   def new
     @pin = current_user.pins.build
   end
 
-
   def edit
   end
-
 
   def create
     @pin = current_user.pins.build(pin_params)
